@@ -1,0 +1,55 @@
+
+
+<div class="container my-5 wrapper">
+
+  <h1 class="mb-3 title">Edit User</h1>
+
+  <div class="row">
+
+    <div class="col-10 ">
+  <form #form="ngForm" (ngSubmit)="UpdateUser()">
+    <div class="mb-3">
+      <label for="id" class="form-label">Id</label>
+      <input type="text" class="form-control" id="id" readonly
+      name="id" [(ngModel)]="user.userid">
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name"
+      name="name" [(ngModel)]="user.name">
+    </div>
+    <!-- <div class="mb-3 hidden">
+      <label for="password" class="form-label ">Password</label>
+      <input type="password" class="form-control" id="password"
+      name="password" [(ngModel)]="user.password">
+    </div> -->
+    <div class="mb-3">
+      <label for="contact" class="form-label">Contact</label>
+      <input type="text" class="form-control" id="contact"
+      name="contact" [(ngModel)]="user.contact">
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <input type="text" class="form-control" id="address"
+      name="address" [(ngModel)]="user.address">
+    </div>
+    <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="email"
+    name="email_id" [(ngModel)]="user.email_id">
+  </div>
+  <div class="mb-3">
+    <label for="role" class="form-label">Role</label>
+    <input type="text" class="form-control" id="role"
+    name="roles" [(ngModel)]="user.roles">
+  </div>
+
+  <button class="btn btn-primary  g mr-5" type="submit">Save</button>
+  <button class="btn btn-danger ml-5" (click)="deleteUser(user.userid)" type="submit">Delete</button>
+  </form>
+
+    </div>
+  </div>
+
+
+  </div>

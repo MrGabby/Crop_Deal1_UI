@@ -3,14 +3,45 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UsersListComponent } from './components/Users/users-list/users-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AddUserComponent } from './components/Users/add-user/add-user.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { EditUserComponent } from './components/Users/edit-user/edit-user.component';
+import { DeleteUserComponent } from './components/Users/delete-user/delete-user.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ErrorComponent } from './components/error/error.component';
+import { FarmerComponent } from './components/farmer/farmer.component';
+import { DealerComponent } from './components/dealer/dealer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UsersListComponent,
+    AddUserComponent,
+    RegisterComponent,
+    LoginComponent,
+    WelcomepageComponent,
+    WelcomepageComponent,
+    FooterComponent,
+    EditUserComponent,
+    DeleteUserComponent,
+    InvoiceComponent,
+    NavbarComponent,
+    ErrorComponent,
+    FarmerComponent,
+    DealerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
