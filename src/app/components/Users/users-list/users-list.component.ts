@@ -11,25 +11,30 @@ import { Observable } from 'rxjs';
 })
 export class UsersListComponent implements OnInit {
 
-Users: User[] = [];
-currentUser: User;
+  Users: User[] = [];
+  currentUser: User;
 
-  constructor(private usersService:UsersService,private auth:AuthService) { }
+  constructor(private usersService: UsersService, private auth: AuthService) {
+    this.auth.getCurrentUser().subscribe
+  }
   ngOnInit() {
 
-  this.usersService.getallusers().subscribe({ next :(users)=> {
-    this.Users = users;
+    this.usersService.getallusers().subscribe({
+      next: (users) => {
+        this.Users = users;
 
- this.auth.getCurrentUser().subscribe({next:(user)=>{
- this.currentUser = user
-  console.log(user);
-}
-});
+        this.auth.getCurrentUser().subscribe({
+          next: (user) => {
+            this.currentUser = user
+            console.log(user);
+          }
+        });
 
-  },
-  error:(response)=> {
-    console.log(response);}
+      },
+      error: (response) => {
+        console.log(response);
+      }
 
-  })
-}
+    })
+  }
 }

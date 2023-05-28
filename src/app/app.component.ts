@@ -14,22 +14,28 @@ export class AppComponent  implements OnInit {
 
  islogin: boolean = false;
  flag:any
-CurrentUser:User
+CurrentUser!:User
 Admin:'Admin'
 Dealer:'Dealer'
 Farmer:'Farmer'
- constructor(private auth:UsersService) {
-
+currentvalue:any
+ constructor(private uservice:UsersService,private auth:AuthService) {
+  this.auth.getCurrentUser().subscribe({next:(user)=>{
+    this.CurrentUser = user
+    console.log(this.CurrentUser)
+  }
+ });
  }
 
   ngOnInit(): void {
 this.checkstorage();
 
-this.auth.GetUserByToken().subscribe({next:(user)=>{
-this.CurrentUser = user;
-console.log(this.CurrentUser.roles);
-  }});
+this.uservice.GetUserByToken().subscribe({next:(user)=>{
+/*   this.CurrentUser = user
+console.log(this.CurrentUser.roles); */
+this.auth.changeUserState(user);
 
+  }});
   }
   title = 'Crop_deal1';
 
