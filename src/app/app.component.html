@@ -1,23 +1,25 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
     <div class="container">
-      <a class=" theme m-2 font-weight-bold" href="#">Crop Deal</a>
+      <a class=" theme m-2 " href="#">Crop Deal</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav left-shift ">
 
+          <a class="nav-link active" aria-current="page" routerLink=''>Home</a>
+          <a class="nav-link active" aria-current="page" routerLink=''>About</a>
           <a  *ngIf="!CurrentUser"  class="nav-link" routerLink="Login">Login</a>
           <a  *ngIf="!CurrentUser" class="nav-link" routerLink="Register">Register</a>
-          <a *ngIf="CurrentUser  && CurrentUser?.roles==='Admin' " class="nav-link active " aria-current="page" routerLink="Users">Admin</a>
+          <a *ngIf="CurrentUser  && CurrentUser?.roles==='Admin' " class="nav-link active " aria-current="page" routerLink="Admin">Admin</a>
           <a *ngIf="CurrentUser && CurrentUser?.roles==='Dealer'" class="nav-link active" aria-current="page" routerLink="Dealer">Dealer</a>
           <a *ngIf="CurrentUser && CurrentUser?.roles==='Farmer' " class="nav-link active" aria-current="page" routerLink="Farmer">Farmer</a>
           <a *ngIf="CurrentUser && CurrentUser?.roles==='Admin'" class="nav-link active" aria-current="page" routerLink="Invoice">Invoice</a>
-          <button  *ngIf="islogin" (click)="logout()" routerLink="Login" type="button" class="btn btn-light">Logout</button>
+          <button  *ngIf="CurrentUser" (click)="logout()" routerLink="Login" type="button" class="btn btn-light l">Logout</button>
         </div>
       </div>
-    </div>S
+    </div>
   </nav>
 <!-- <nav>
 && CurrentUser.roles==Admin

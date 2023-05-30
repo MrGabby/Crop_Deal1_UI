@@ -1,26 +1,30 @@
 
 <div class="conatianer" id="Invoice"  >
 
-<div *ngFor="let item of Invoice"  class="container">
+<div *ngFor="let item of Invoice"  class="container" >
   <div class="thick-line"></div>
-  <div class="row">
+
+  <!-- <div  *ngif="item?.dealerid==CurrentUser?.userid && item?.roles==='Farmer'"> -->
+
+
+    <div class="row"  >
       <div class="col-xs-12">
-      <div class="invoice-title">
-        <h2 style="font-weight: bold;">Invoice</h2><h3 style="font-weight: bold;" class="pull-right">Order Id #{{item.invoiceid}}</h3>
+        <div class="invoice-title">
+          <h2 style="font-weight: bold;">Invoice</h2><h3 style="font-weight: bold;" class="pull-right">Order Id #{{item.invoiceid}}</h3>
       </div>
       <hr>
       <div class="row">
         <div class="col-xs-6">
           <address>
           <strong style="font-weight: bold; color:#49c049;">Farmer Id</strong><br>
-                     {{item.farmerid}}
+                     {{item.dealerid}}
 
           </address>
         </div>
         <div class="col-xs-6 text-right">
           <address>
             <strong style="font-weight: bold; color:#49c049;">Dealer Id</strong><br>
-                  {{item.dealerid}}
+                  {{item.farmerid}}
           </address>
         </div>
       </div>
@@ -84,7 +88,7 @@
                   <td class="no-line"></td>
                   <td class="no-line"></td>
                   <td class="no-line text-center"><strong>Total</strong></td>
-                  <td class="no-line text-right">Rs.{{null}}</td>
+                  <td class="no-line text-right">Rs.{{item.price}}</td>
                 </tr>
               </tbody>
             </table>
@@ -94,6 +98,7 @@
     </div>
   </div>
 
+  <!-- </div> -->
 
 </div>
 </div>

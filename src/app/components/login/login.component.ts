@@ -1,22 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { User } from '../../models/User.model';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from '../../services/users.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
+// @NgModule({ imports:[
+//   FormsModule]
+// })
+
 export class LoginComponent {
 
 
   Username: string="";
   password: string="";
 
+  CurrentUser!:User
+  constructor( private auth:AuthService, private router:Router){
 
-  constructor( private auth:AuthService, private router:Router){ }
+
+   }
 
   onSubmit() {
     let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -56,7 +65,7 @@ export class LoginComponent {
      // console.log(res.payload);
            if(res.role=="Admin"){
 
-          this.router.navigate(['Users']);}
+          this.router.navigate(['Admin']);}
          else if(res.role=="Farmer"){
 this.router.navigate(['Farmer']);
 }

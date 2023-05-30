@@ -31,8 +31,6 @@ currentvalue:any
 this.checkstorage();
 
 this.uservice.GetUserByToken().subscribe({next:(user)=>{
-/*   this.CurrentUser = user
-console.log(this.CurrentUser.roles); */
 this.auth.changeUserState(user);
 
   }});
@@ -49,6 +47,7 @@ this.auth.changeUserState(user);
   logout(){
     localStorage.clear();
     this.islogin=false;
+    this.auth.changeUserState(null);
   }
 
 

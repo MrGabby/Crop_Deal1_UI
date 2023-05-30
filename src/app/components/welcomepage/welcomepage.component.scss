@@ -20,3 +20,100 @@
 .left-shift{
   padding-left: 75%;
 }
+
+
+.card{
+  margin: 5% 0%;
+  width: 356px;
+  height: 300px;
+
+}
+
+.card-body{
+  margin: 0% 0% 0% 3%;
+  padding: 6% 0%;
+  width: 555px;
+height: 300px;
+}
+/*  .btn{
+  background-color: #49c049;
+  color: azure;
+
+ } */
+
+ .img1{
+  object-fit: cover;
+  //width: 55.3rem;
+   width: 355px;
+  //height: 40rem;
+   height: 200px;
+}
+.img2{
+  object-fit: cover;
+  padding-bottom: 10%;
+  width: 185.3rem;
+  // width: 1800px;
+  height: 150rem;
+  // height: 800px;
+}
+
+.card-text{
+  font-weight: bold;
+  padding-left: 25%;
+}
+
+.ad{
+  padding-right: 25%;
+}
+.carousel-item{
+height:120%
+}
+
+.a{
+font-weight: bold;
+font-size: 50px;
+text-align: center;
+color:#49c049
+}
+.b{
+  margin: 110px 10px 0px 10px;
+font-weight: bold;
+font-size: 35px;
+text-align: center;
+color:#49c049
+}
+.carousel-inner{
+  height:700px
+}
+
+hr{
+  border: dotted #00fd33 8px;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  width: 15%;
+  padding: 10px;
+}
+
+.content{
+  margin-top: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.para{
+  font-size: 20px;
+  letter-spacing: 0.7px;
+  line-height: 40px;
+}
+
+.container{
+  width:120rem
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

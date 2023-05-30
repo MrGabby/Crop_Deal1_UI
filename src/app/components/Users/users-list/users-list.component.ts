@@ -12,10 +12,16 @@ import { Observable } from 'rxjs';
 export class UsersListComponent implements OnInit {
 
   Users: User[] = [];
-  currentUser: User;
 
+  CurrentUser!:User
   constructor(private usersService: UsersService, private auth: AuthService) {
-    this.auth.getCurrentUser().subscribe
+
+    this.auth.getCurrentUser().subscribe({next:(user)=>{
+      this.CurrentUser = user
+      console.log(this.CurrentUser)
+    }
+   });
+
   }
   ngOnInit() {
 
@@ -23,12 +29,12 @@ export class UsersListComponent implements OnInit {
       next: (users) => {
         this.Users = users;
 
-        this.auth.getCurrentUser().subscribe({
-          next: (user) => {
-            this.currentUser = user
-            console.log(user);
-          }
-        });
+        this.usersService.GetUserByToken().subscribe({next:(user)=>{
+          /*   this.CurrentUser = user
+          console.log(this.CurrentUser.roles); */
+          this.auth.changeUserState(user);
+
+            }});
 
       },
       error: (response) => {

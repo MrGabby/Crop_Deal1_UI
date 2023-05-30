@@ -1,1 +1,105 @@
-<p>farmer works!</p>
+<div class="container">
+
+  <div class="card-deck row">
+
+    <div class="col-xs-20 col-sm-12 col-md-6">
+    <div class="card ">
+
+      <div class="view overlay">
+        <img class="card-img-top" src="../../..\assets\Image\crop_post.jpg" alt="Card image cap">
+        <a href="#!">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+      <div class="card-body">
+
+        <h4 class="card-title ">
+          Post Your Crop for Sale</h4>
+        <p class="card-text"><i>Advertise and Sell your crops here</i></p>
+        <button type="button" class="btn btn-lg btn-light-blue" routerLink='PostCrop'>Sell Crops</button>
+
+      </div>
+
+    </div>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-6">
+
+    <div class="card mb-4">
+
+
+      <div class="view overlay">
+        <img class="card-img-top" src="../../..\assets\Image\crop_view.jpg" alt="Card image cap">
+        <a href="#!">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+
+      <div class="card-body">
+
+
+        <h4 class="card-title">
+          View Your Crops</h4>
+
+        <p class="card-text"><i>Explore Your Complete Listing of Posted Crops for Sale</i></p>
+
+        <button type="button" class="btn btn-light-blue btn-lg " routerLink='GetCrop'>View Crops</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-xs-12 col-sm-6 col-md-6">
+
+    <div class="card mb-4">
+
+      <div class="view overlay">
+        <img class="card-img-top" src="../../../assets/Image/invoice.jpg " alt="Card image cap">
+        <a href="#!">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+      <div class="card-body">
+
+
+        <h4 class="card-title">Get Invoice</h4>
+        <p class="card-text"><i>View all Your Generated Invoices</i></p>
+        <button type="button" class="btn btn-light-blue btn-lg" routerLink='Invoice'>View Invoice</button>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="card">
+
+      <div class="view overlay">
+        <img class="card-img-top" src="../../../assets/Image/Update_profile.jpg" alt="Card image cap">
+        <a href="#!">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+      <div class="card-body">
+
+        <h4 class="card-title">Update Profile</h4>
+        <p class="card-text"><i>Keep Your Profile Update to Date</i></p>
+        <button type="button" class="btn btn-light-blue btn-lg" [routerLink]="['edit' , CurrentUser?.userid ]">Update</button>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+  </div>
+
+  </div>

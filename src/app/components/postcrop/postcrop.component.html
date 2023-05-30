@@ -1,0 +1,70 @@
+
+
+<div class="container my-5 wrapper">
+
+  <h1 class="mb-3 t ">Crop Details</h1>
+
+  <div class="row">
+
+    <div class="col-10 ">
+  <form #form="ngForm" (ngSubmit)="CropPost()" >
+    <div class="mb-3">
+      <label for="crop_name" class="form-label">Crop Name</label>
+      <input type="text" class="form-control" id="crop_name" placeholder="Enter Crop Name" required
+      name="crop_name" [(ngModel)]="c.crop_name"
+      >
+
+    </div>
+    <div class="mb-3">
+      <label for="crop_family" class="form-label">Crop Family</label>
+      <input type="text" class="form-control" id="crop_family" placeholder="Enter Crop Family "required
+      name="crop_family" [(ngModel)]="c.crop_family"
+      >
+    </div>
+
+    <div class="mb-3">
+       <label for="s" >Choose Crop Type</label>
+      <div class="dropdown mb-3">
+
+          <select  id="s"  class="form-control" [(ngModel)]="c.crop_type">
+          <option value="" disabled selected>Select Crop Type</option>
+           <option *ngFor="let Role of croptype" >{{Role}}</option>
+           </select>
+          </div>
+        </div>
+
+        <div class="mb-3">
+      <label for="cropDetail_description" class="form-label">Crop Description</label>
+      <input type="Textbox" class="form-control" id="cropDetail_description" placeholder="Enter Crop Description"required
+      name="cropDetail_description" [(ngModel)]="c.cropDetail_description"
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input type="number" class="form-control" id="quantity" placeholder="Enter Quantity"required
+      name="quantity"  [(ngModel)]="c.quantity"
+       >
+    </div>
+    <div class="mb-3">
+    <label for="price" class="form-label">Crop Price</label>
+    <input type="number" class="form-control" id="price" placeholder="Enter Crop Price"required
+    name="price"  [(ngModel)]="c.price"
+    >
+  </div>
+
+  <div class="mb-3">
+    <label for="location" class="form-label">Location</label>
+    <input type="Textbox" class="form-control" id="location" placeholder="Enter Location"required
+    name="location" [(ngModel)]="c.location"
+    >
+  </div>
+
+  <button class="btn btn-primary " type="submit">Publish</button>
+
+</form>
+</div>
+</div>
+
+
+</div>

@@ -45,7 +45,7 @@
   </div>
 
   <button class="btn btn-primary  g mr-5" type="submit">Save</button>
-  <button class="btn btn-danger ml-5" (click)="deleteUser(user.userid)" type="submit">Delete</button>
+  <button class="btn btn-danger ml-5" (click)="deleteUser(user.userid)" *ngIf="CurrentUser?.roles==='Admin'" type="submit">Delete</button>
   </form>
 
     </div>

@@ -6,4 +6,6 @@ export interface register{
   email_id:string;
   roles:string;
   password:string;
+
 }
+

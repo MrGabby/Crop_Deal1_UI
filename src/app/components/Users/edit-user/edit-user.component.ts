@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/User.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -8,6 +10,10 @@ import { UsersService } from 'src/app/services/users.service';
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.scss']
 })
+
+// @NgModule({ imports:[
+//   FormsModule]
+// })
 export class EditUserComponent {
 
   user: User={
@@ -21,7 +27,17 @@ export class EditUserComponent {
     is_subscribe: false
   }
 
-  constructor(private route: ActivatedRoute,private service:UsersService,private router:Router) {}
+  CurrentUser!:User
+  constructor(private route: ActivatedRoute,private service:UsersService,private router:Router,private auth:AuthService) {
+
+
+      this.auth.getCurrentUser().subscribe({next:(user)=>{
+        this.CurrentUser = user
+        console.log(this.CurrentUser)
+      }
+     });
+
+  }
 
     ngOnInit(): void {
      this.route.paramMap.subscribe({next: params => {

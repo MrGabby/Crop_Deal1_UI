@@ -19,6 +19,11 @@ import { ErrorComponent } from './components/error/error.component';
 import { FarmerComponent } from './components/farmer/farmer.component';
 import { DealerComponent } from './components/dealer/dealer.component';
 
+import { AdminComponent } from './components/admin/admin.component';
+import { PostcropComponent } from './components/postcrop/postcrop.component';
+import { GetcropComponent } from './components/getcrop/getcrop.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +40,12 @@ import { DealerComponent } from './components/dealer/dealer.component';
     NavbarComponent,
     ErrorComponent,
     FarmerComponent,
-    DealerComponent
+    DealerComponent,
+    //PostcComponent,
+    AdminComponent,
+    PostcropComponent,
+    GetcropComponent,
+   // PostcComponent,
   ],
   imports: [
     BrowserModule,
